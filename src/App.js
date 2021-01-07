@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {BrowserRouter, Switch, Route, HashRouter} from "react-router-dom";
+import {Switch, Route, HashRouter} from "react-router-dom";
 import MainPage from "./components/main/MainPage";
 import TermsPage from "./components/terms/TermsPage";
 import LoginPage from "./components/login/LoginPage";

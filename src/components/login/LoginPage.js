@@ -37,7 +37,7 @@ export default function LoginPage() {
             <h1>Welcome to Dante!</h1>
             <p>Login with an account to store books online, suggest books to other readers and more.</p>
             <br/>
-            <Button className={classes.loginButton} variant="outlined" color={"secondary"} startIcon={<img width={24} height={24} src={window.location.origin + '/google_icon.png'}/>}>CONTINUE
+            <Button className={classes.loginButton} variant="outlined" color={"secondary"} startIcon={<img alt={"Google Icon"} width={24} height={24} src={window.location.origin + '/google_icon.png'}/>}>CONTINUE
                 WITH GOOGLE</Button>
             <br/>
             <br/>
