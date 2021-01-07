@@ -9,14 +9,16 @@ import {
     BottomNavigation,
     BottomNavigationAction,
     Card,
-    GridList, InputBase,
+    GridList, GridListTile, InputBase,
 } from "@material-ui/core";
 import ForLaterIcon from '@material-ui/icons/BookmarkBorder';
 import ReadingIcon from '@material-ui/icons/ClassOutlined';
 import ReadIcon from '@material-ui/icons/DoneOutline';
 import bookData from '../api/data.json'
 import SearchIcon from '@material-ui/icons/Search';
-import {indexOfReadingState} from '../api/ReadingState'
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import {indexOfReadingState} from '../api/ReadingState';
+import BookCard from "./BookCard"
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -30,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             display: 'flex',
         },
+    },
+    header: {
+        letterSpacing: 3,
+        fontWeight: 800
     },
     search: {
         position: 'relative',
@@ -76,7 +82,8 @@ const useStyles = makeStyles((theme) => ({
         right: 0,
         left: 0,
         marginLeft: "auto",
-        marginRight: "auto"
+        marginRight: "auto",
+        fontFamily: "Nunito",
     },
     content: {
         padding: 40,
@@ -90,19 +97,36 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
     },
     tile: {
-        margin: 16
-    }
+        margin: 16,
+        padding: 16
+    },
 }));
 
-function MainPage() {
+function MainPage(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
+    const getGridListCols = () => {
+        if (isWidthUp('xl', props.width)) {
+            return 4;
+        }
+
+        if (isWidthUp('lg', props.width)) {
+            return 3;
+        }
+
+        if (isWidthUp('md', props.width)) {
+            return 2;
+        }
+
+        return 1;
+    }
+
     return (
         <div className={classes.grow}>
-            <AppBar position="static" color="#FFF">
+            <AppBar position="static" color="#FFF" elevation={0}>
                 <Toolbar>
-                    <h2>Dante</h2>
+                    <h2 className={classes.header}>DANTE</h2>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
                         <p className={classes.sectionMobile}>Martin Macheiner</p>
@@ -131,17 +155,16 @@ function MainPage() {
                 />
             </div>
             <div className={classes.content}>
-                <GridList className={classes.gridList} cols={2.2} spacing={32}>
+                <GridList className={classes.gridList} cellHeight={"auto"} cols={getGridListCols()} spacing={32}>
                     {bookData.books
                         .filter(book => {
                             return indexOfReadingState(book.state) === value
                         })
                         .sort((a, b) => a.position - b.position)
                         .map((book) => (
-                            <Card variant={"outlined"} className={classes.tile}>
-                                <h4>{book.title}</h4>
-                                <p>{book.author}</p>
-                            </Card>
+                            <GridListTile>
+                                <BookCard book={book}/>
+                            </GridListTile>
                         ))}
                 </GridList>
             </div>
@@ -164,4 +187,4 @@ function MainPage() {
     );
 }
 
-export default MainPage
+export default withWidth()(MainPage);
