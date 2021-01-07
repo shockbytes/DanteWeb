@@ -19,6 +19,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import {indexOfReadingState} from '../api/ReadingState';
 import BookCard from "./BookCard"
+import { useHistory } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -38,20 +40,20 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 800
     },
     search: {
-        position: 'relative',
         borderRadius: 30,
         backgroundColor: fade("#AAA", 0.15),
         '&:hover': {
             backgroundColor: fade("#AAA", 0.25),
         },
         top: 20,
-        marginRight: "auto",
-        marginLeft: "auto",
-        width: '50%',
+        width: '30%',
+        [theme.breakpoints.down('sm')]: {
+            width: '55%',
+        },
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
-        height: '100%',
+        height: '50%',
         position: 'absolute',
         pointerEvents: 'none',
         display: 'flex',
@@ -67,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
+        fontFamily: "Nunito",
         [theme.breakpoints.up('md')]: {
             width: '20ch',
         },
@@ -103,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function MainPage(props) {
+    const history = useHistory();
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -122,11 +126,28 @@ function MainPage(props) {
         return 1;
     }
 
+    /*
+
+     */
     return (
         <div className={classes.grow}>
             <AppBar position="static" color="#FFF" elevation={0}>
                 <Toolbar>
                     <h2 className={classes.header}>DANTE</h2>
+                    <div className={classes.grow}/>
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <SearchIcon/>
+                        </div>
+                        <InputBase
+                            placeholder="Search"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{'aria-label': 'search'}}
+                        />
+                    </div>
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
                         <p className={classes.sectionMobile}>Martin Macheiner</p>
@@ -134,6 +155,7 @@ function MainPage(props) {
                             edge="end"
                             aria-label="account of current user"
                             aria-haspopup="true"
+                            onClick={() => history.replace('/login')}
                             color="inherit"
                         >
                             <AccountCircle/>
@@ -141,19 +163,6 @@ function MainPage(props) {
                     </div>
                 </Toolbar>
             </AppBar>
-            <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                    <SearchIcon/>
-                </div>
-                <InputBase
-                    placeholder="Search"
-                    classes={{
-                        root: classes.inputRoot,
-                        input: classes.inputInput,
-                    }}
-                    inputProps={{'aria-label': 'search'}}
-                />
-            </div>
             <div className={classes.content}>
                 <GridList className={classes.gridList} cellHeight={"auto"} cols={getGridListCols()} spacing={32}>
                     {bookData.books

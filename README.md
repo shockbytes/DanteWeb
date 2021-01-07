@@ -10,19 +10,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Login
     - [ ] Login with Google
     - [ ] Login with Mail
-    - [ ] Show Terms of Services
+    - [x] Show Terms of Services
 - [ ] AppBar
-    - [ ] Navigation Mini Drawer
-      - [ ] Library (Dante Icon)
-      - [ ] Wishlist
-      - [ ] Timeline (do not implement feature)
     - [ ] User Image and User Name
 - [ ] LibraryPage
     - [ ] SearchBar
-    - [ ] List with book cards
-    - [ ] BottomNavigationBar with different library states
+    - [x] List with book cards
+    - [x] BottomNavigationBar with different library states
 - [ ] Book card
-    - [ ] Show content
+    - [x] Show content
     - [ ] Show overflow menu + actions
 - [ ] Detail Page
     - [ ] Show content

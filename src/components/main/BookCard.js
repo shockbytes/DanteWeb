@@ -1,4 +1,4 @@
-import {Card, Chip, GridList, GridListTile} from "@material-ui/core";
+import {Card, Chip} from "@material-ui/core";
 import React from "react";
 import './BookCard.css';
 import {makeStyles} from "@material-ui/core/styles";
