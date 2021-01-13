@@ -14,13 +14,14 @@ import {
 import ForLaterIcon from '@material-ui/icons/BookmarkBorder';
 import ReadingIcon from '@material-ui/icons/ClassOutlined';
 import ReadIcon from '@material-ui/icons/DoneOutline';
-import bookData from '../api/data.json'
 import SearchIcon from '@material-ui/icons/Search';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import withWidth, {isWidthUp} from '@material-ui/core/withWidth';
 import {indexOfReadingState} from '../api/ReadingState';
 import BookCard from "./BookCard"
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import {BookRepository} from "../api/BookRepository";
 
+const bookRepository = new BookRepository()
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -96,13 +97,9 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translateZ(0)',
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         overflow: 'hidden',
-    },
-    tile: {
-        margin: 16,
-        padding: 16
-    },
+    }
 }));
 
 function MainPage(props) {
@@ -131,7 +128,7 @@ function MainPage(props) {
      */
     return (
         <div className={classes.grow}>
-            <AppBar position="static" color="#FFF" elevation={0}>
+            <AppBar position="static" color="inherit" elevation={0}>
                 <Toolbar>
                     <h2 className={classes.header}>DANTE</h2>
                     <div className={classes.grow}/>
@@ -165,13 +162,14 @@ function MainPage(props) {
             </AppBar>
             <div className={classes.content}>
                 <GridList className={classes.gridList} cellHeight={"auto"} cols={getGridListCols()} spacing={32}>
-                    {bookData.books
+                    {bookRepository
+                        .fetchBooks()
                         .filter(book => {
                             return indexOfReadingState(book.state) === value
                         })
                         .sort((a, b) => a.position - b.position)
                         .map((book) => (
-                            <GridListTile>
+                            <GridListTile key={book.id}>
                                 <BookCard book={book}/>
                             </GridListTile>
                         ))}

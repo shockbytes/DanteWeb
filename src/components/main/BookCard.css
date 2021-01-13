@@ -3,16 +3,30 @@
 .image {
     float: left;
     width: 64px;
-    margin: 16px;
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     border-radius: 12px;
 }
 
 .content {
     float: left;
     width: 75%;
+    padding-left: 24px;
 }
 
 .labels {
     clear: left;
+    padding-left: 0;
     margin: 8px 16px;
+    min-height: 40px;
+}
+
+.text {
+    min-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
