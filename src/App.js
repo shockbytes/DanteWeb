@@ -6,6 +6,7 @@ import LoginPage from "./components/login/LoginPage";
 import {ThemeProvider} from "@material-ui/styles";
 import {createMuiTheme} from "@material-ui/core";
 import BookDetail from "./components/detail/BookDetail";
+import Privacy from "./components/privacy/Privacy";
 
 const theme = createMuiTheme({
     palette: {
@@ -25,6 +26,7 @@ class App extends Component {
                         <Route exact path="/" component={MainPage}/>
                         <Route exact path="/login" component={LoginPage}/>
                         <Route exact path="/terms" component={TermsPage}/>
+                        <Route exact path="/privacy" component={Privacy}/>
                         <Route path="/books/:book_id" component={BookDetail}/>
                     </Switch>
                 </HashRouter>
