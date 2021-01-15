@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Backlog for v1.0
+## Version 1.0
 
 - [ ] General
     - [ ] Access to Firebase Database

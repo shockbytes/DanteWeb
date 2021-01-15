@@ -2,6 +2,7 @@ import {Card, Chip} from "@material-ui/core";
 import React from "react";
 import './BookCard.css';
 import {makeStyles} from "@material-ui/core/styles";
+import {useHistory} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     chip: {
@@ -12,13 +13,15 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         paddingTop: 8,
-        paddingBottom: 8
+        paddingBottom: 8,
+        cursor: "pointer"
     },
 }));
 
 export default function BookCard(props) {
     const classes = useStyles();
-    return <Card variant={"outlined"} className={classes.root}>
+    const history = useHistory()
+    return <Card variant={"outlined"} className={classes.root} onClick={() => history.push("/books/"+props.book.id)}>
         <img alt="book cover" className="image" src={props.book.thumbnailAddress}/>
         <div className="content">
             <h4 className={"text"} >{props.book.title}</h4>

@@ -1,0 +1,59 @@
+.container {
+    padding: 20px;
+}
+
+.book-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-image {
+    width: 104px;
+    border-radius: 12px;
+}
+
+.pages-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.misc-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.misc-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.detail-chip {
+    font-family: Nunito,  Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-right: 8px;
+}
+
+.detail-labels {
+    margin: 30px 0;
+    min-height: 40px;
+}
+
+#tf-current-page {
+    font-family: Nunito,  Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+#tf-pages {
+    font-family: Nunito,  Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
