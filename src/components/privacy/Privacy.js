@@ -370,13 +370,12 @@ class Privacy extends React.Component {
                             such as your device
                             advertising settings or by following the instructions provided by Google in their Privacy
                             Policy: <a
-                                href="https://policies.google.com/privacy" rel="external nofollow noopener"
-                                target="_blank">https://policies.google.com/privacy</a>
+                                href="https://policies.google.com/privacy"
+                                rel="external nofollow noopener">https://policies.google.com/privacy</a>
                         </p>
                         <p>For more information on the privacy practices of Google, please visit the Google
                             Privacy &amp; Terms web
-                            page: <a href="https://policies.google.com/privacy" rel="external nofollow noopener"
-                                     target="_blank">https://policies.google.com/privacy</a>
+                            page: <a href="https://policies.google.com/privacy" rel="external nofollow noopener">https://policies.google.com/privacy</a>
                         </p>
                     </li>
                     <li>
@@ -386,18 +385,15 @@ class Privacy extends React.Component {
                             your device
                             advertising settings or by following the instructions provided by Google in their Privacy
                             Policy: <a
-                                href="https://policies.google.com/privacy" rel="external nofollow noopener"
-                                target="_blank">https://policies.google.com/privacy</a>
+                                href="https://policies.google.com/privacy" rel="external nofollow noopener">https://policies.google.com/privacy</a>
                         </p>
                         <p>We also encourage you to review the Google's policy for safeguarding your data: <a
-                            href="https://support.google.com/analytics/answer/6004245" rel="external nofollow noopener"
-                            target="_blank">https://support.google.com/analytics/answer/6004245</a></p>
+                            href="https://support.google.com/analytics/answer/6004245" rel="external nofollow noopener">https://support.google.com/analytics/answer/6004245</a></p>
                         <p>For more information on what type of information Firebase collects, please visit the How
                             Google uses data
                             when you use our partners' sites or apps webpage: <a
                                 href="https://policies.google.com/technologies/partner-sites"
-                                rel="external nofollow noopener"
-                                target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+                                rel="external nofollow noopener">https://policies.google.com/technologies/partner-sites</a></p>
                     </li>
                 </ul>
                 <h1>GDPR Privacy</h1>
@@ -935,15 +931,12 @@ class Privacy extends React.Component {
                     instructions presented on the Service:</p>
                 <ul>
                     <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/"
-                                                       rel="external nofollow noopener"
-                                                       target="_blank">http://www.networkadvertising.org/choices/</a>
+                                                       rel="external nofollow noopener">http://www.networkadvertising.org/choices/</a>
                     </li>
                     <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/"
-                                                       rel="external nofollow noopener"
-                                                       target="_blank">http://www.youronlinechoices.com/</a></li>
+                                                       rel="external nofollow noopener">http://www.youronlinechoices.com/</a></li>
                     <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&amp;lang=EN"
-                                                       rel="external nofollow noopener"
-                                                       target="_blank">http://optout.aboutads.info/?c=2&amp;lang=EN</a>
+                                                       rel="external nofollow noopener">http://optout.aboutads.info/?c=2&amp;lang=EN</a>
                     </li>
                 </ul>
                 <p>The opt out will place a cookie on Your computer that is unique to the browser You use to opt out. If
